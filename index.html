@@ -11,6 +11,7 @@
 </head>
 
 <body onload="init()">
+
     <header>
         <div class="header-container main-layout">
             <img class="logo" src="logos/logo.png" alt="">
@@ -21,10 +22,15 @@
             </nav>
         </div>
     </header>
+
+    <section class="generator">
+        <canvas height="100px" weidth="100px">Update your browser!</canvas>
+    </section>
+
     <section class="filter">
         <div class="filter-container main-layout">
             <div class="search">
-                <input type="text">
+                <input type="text" placeholder="Enter search keyword">
                 <img src="icons/search-icon.png">
             </div>
             <div class="categories-out-container">
@@ -32,18 +38,20 @@
                     <button class="very-few">funny</button>
                     <button class="much">comics</button>
                     <button class="few">dogs</button>
-                    <button class="avg">drinks</button>
-                    <button class="very-much">books</button>
+                    <!-- <button class="avg">drinks</button>
+                    <button class="very-much">books</button> -->
                 </div>
                 <button class="more">more...</button>
             </div>
         </div>
     </section>
+
     <main>
         <div class="main-container main-layout">
             <div class="gallery"></div>
         </div>
     </main>
+
     <section class="about">
         <div class="about-container">
             <img src="img/alina.jpg" alt="Monica Geller">
@@ -72,9 +80,6 @@
     <script src="js/controller.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/storage-service.js"></script>
-    <section class="generator" hidden>
-        <canvas height="100px" weidth="100px">Update your browser!</canvas>
-    </section>
 </body>
 
 </html>

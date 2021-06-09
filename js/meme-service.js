@@ -1,19 +1,8 @@
 'use strict'
 
-
 var gCanvas
+var gMeme
 var gCtx
-
-var gMeme = {
-    selectedImgId: 1,
-    selectedLineIdx: 0,
-    lines: [{
-        txt: 'I never eat Falafel',
-        size: 20,
-        align: 'left',
-        color: 'red'
-    }]
-}
 
 var gKeywords = {
     'happy': 1,
@@ -116,4 +105,21 @@ var gImgs = [{
 
 function getImageUrl() {
     return gImgs.find(img => img.id === gMeme.selectedImgId).url
+}
+
+function resetMeme() {
+    gMeme = {
+        selectedImgId: null,
+        selectedLineIdx: 0,
+        lines: [{
+            txt: 'Enter your txt',
+            size: 20,
+            align: 'center',
+            color: 'white'
+        }]
+    }
+}
+
+function setMemeImg(imgId) {
+    gMeme.selectedImgId = imgId
 }

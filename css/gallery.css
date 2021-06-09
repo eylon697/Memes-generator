@@ -1,3 +1,482 @@
+@font-face {
+    font-family: Brands;
+    src: url(../fonts/font-awesome/fa-brands-400.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: Montserrat-Thin;
+    src: url(../fonts/Montserrat/Montserrat-Thin.ttf);
+}
+
 * {
     box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-size: 1rem;
+    font-family: Montserrat, sans-serif;
+}
+
+.main-layout {
+    width: 100%;
+    max-width: 1135px;
+}
+
+img {
+    object-fit: cover;
+}
+
+button {
+    padding: 0;
+}
+
+header {
+    padding: 0 3.125rem;
+    height: 66px;
+    background-color: #FF7F00;
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+nav .seperator {
+    margin-top: 1px;
+    height: 30px;
+    width: 1px;
+    background-color: #8A8A8A;
+}
+
+header button {
+    cursor: pointer;
+    border: unset;
+    background-color: unset;
+    padding: 0 3px;
+    font-size: 1.187rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    height: 66px;
+}
+
+header button:last-child {
+    padding: 0;
+}
+
+header button:hover {
+    color: #040A2C;
+}
+
+header button.curr-page {
+    cursor: default;
+    color: #040A2C;
+    -webkit-box-shadow: inset 0px -5px 0px 0px #000000;
+    box-shadow: inset 0px -5px 0px 0px #000000;
+}
+
+.generator {
+    display: none;
+}
+
+.filter {
+    padding: 0 48px;
+    height: 100px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    border-bottom: #040A2C solid 3px;
+}
+
+.search:hover {
+    border-bottom: #FF7F00 solid 3px;
+}
+
+.filter-container input {
+    border: unset;
+    height: 27px;
+    width: 262px;
+}
+
+.filter-container input::placeholder {
+    font-size: 1.187rem;
+}
+
+.filter-container input:focus-visible {
+    outline: unset;
+}
+
+.filter .search img {
+    position: relative;
+    top: 5px;
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.categories-out-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem
+}
+
+.categories {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.categories-out-container button {
+    border: unset;
+    background-color: unset;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #040A2C;
+}
+
+.categories-out-container button:hover {
+    color: #FF7F00;
+}
+
+.categories button.very-few {
+    font-size: 1.187rem;
+}
+
+.categories button.few {
+    font-size: 1.5rem;
+}
+
+.categories button.avg {
+    font-size: 1.875rem;
+}
+
+.categories button.much {
+    font-size: 2.5rem;
+}
+
+.categories button.very-much {
+    font-size: 3rem
+}
+
+main {
+    background-color: #E3E3E3;
+    display: flex;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery {
+    display: flex;
+    align-self: center;
+    display: grid;
+    max-width: 400px;
+    grid-template-columns: repeat(auto-fit, 10rem);
+    grid-auto-rows: 10rem;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.gallery img {
+    border-radius: 0.5em;
+    height: 10rem;
+    width: 10rem;
+}
+
+
+/* .portrait {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+.square {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.landscape {
+    grid-row: span 1;
+    grid-column: span 3;
+} */
+
+canvas {
+    border: black solid 1px;
+}
+
+section.about {
+    padding: 2rem 2rem 2.5rem;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 892px;
+    gap: 1.312rem;
+}
+
+.about img {
+    width: 158px;
+    height: 158px;
+    border-radius: 50%;
+}
+
+.about .details {
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    /* height: 150px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.312rem;
+}
+
+.details .empty {
+    display: none;
+}
+
+.details h2 {
+    color: #FF7F00;
+    line-height: 1;
+    font-family: Montserrat-Bold, sans-serif;
+    font-size: 1.562rem;
+    margin: 0;
+    margin-bottom: 0.875rem;
+}
+
+.details p {
+    line-height: 1;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.social a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    font-size: 23px;
+    background-color: #FF7F00;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Brands;
+    border-radius: 11px;
+}
+
+.facebook::before {
+    content: '\f39e';
+}
+
+.linkdin::before {
+    content: '\f0e1';
+}
+
+.git::before {
+    content: '\f09b';
+}
+
+.facebook:hover {
+    background-color: #3b5998;
+}
+
+.linkdin:hover {
+    background-color: #2174c8;
+}
+
+.git:hover {
+    background-color: #161b22;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4.875rem 0;
+    background-color: #FF7F00;
+}
+
+.copyrights {
+    font-family: Montserrat-Thin, sans-serif;
+    color: #FFFFFF;
+    line-height: 1;
+    font-size: 1.187rem;
+}
+
+@media (min-width: 415px) {
+    .main-layout {
+        max-width: 330px;
+    }
+    .categories-out-container {
+        gap: 1.7rem;
+    }
+    .categories {
+        gap: 1rem;
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fit, 10.187rem);
+        grid-auto-rows: 10.187rem;
+    }
+    .gallery img {
+        height: 10.187rem;
+        width: 10.187rem;
+    }
+}
+
+@media (min-width: 570px) {
+    .main-layout {
+        max-width: 500px;
+    }
+    .categories-out-container {
+        gap: 1rem;
+    }
+    .gallery {
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 750px) {
+    .filter-container {
+        flex-direction: row;
+    }
+    .main-layout {
+        max-width: 1000px;
+    }
+    .gallery {
+        max-width: 700px;
+        grid-template-columns: repeat(auto-fit, 10.187rem);
+        grid-auto-rows: 10.187rem;
+    }
+    .gallery img {
+        height: 10.187rem;
+        width: 10.187rem;
+    }
+}
+
+@media (min-width: 850px) {
+    .main-layout {
+        max-width: 780px;
+    }
+    .gallery {
+        max-width: 800px;
+        grid-template-columns: repeat(auto-fit, 16rem);
+        grid-auto-rows: 16rem;
+    }
+    .gallery img {
+        height: 16rem;
+        width: 16rem;
+    }
+    section.about {
+        height: 566px;
+    }
+    section.about img {
+        width: 323px;
+        height: 323px;
+    }
+}
+
+@media (min-width: 1060px) {
+    .main-layout {
+        max-width: 915px;
+    }
+    .gallery {
+        max-width: 1000px;
+        grid-template-columns: repeat(auto-fit, 14rem);
+        grid-auto-rows: 14rem;
+    }
+    .gallery img {
+        height: 14rem;
+        width: 14rem;
+    }
+    .about-container {
+        gap: 1.312rem;
+        flex-direction: row;
+    }
+    section.about .details {
+        height: 213px;
+    }
+    .details .empty {
+        display: block;
+        height: 40px;
+    }
+    section.about .details {
+        height: 200px;
+    }
+    .details h2 {
+        text-align: start;
+        color: #000000;
+    }
+    .details p {
+        text-align: start;
+    }
+    .social {
+        justify-content: start;
+    }
+}
+
+@media (min-width: 1250px) {
+    .main-layout {
+        max-width: 1100px;
+    }
+    .gallery {
+        max-width: 1135px;
+        grid-template-columns: repeat(auto-fit, 16.98rem);
+        grid-auto-rows: 16.98rem;
+    }
+    .gallery img {
+        height: 16.98rem;
+        width: 16.98rem;
+    }
 }
