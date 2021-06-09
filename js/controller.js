@@ -1,5 +1,10 @@
 'use strict'
 
+
+function init() {
+    renderImgs()
+}
+
 function onImageClick() {
     resetCanvas()
     toggleGallery()
@@ -42,4 +47,11 @@ function drawText() {
 
 function renderCategories() {
 
+}
+
+function renderImgs() {
+    var strsHTML = []
+    gImgs.forEach(img => strsHTML.push(`<img src="${img.url}" alt"${img.url}">`))
+    if (!strsHTML.length) return
+    document.querySelector('.gallery').innerHTML = strsHTML.join('')
 }
