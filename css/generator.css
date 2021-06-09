@@ -37,6 +37,10 @@ img {
     object-fit: cover;
 }
 
+button {
+    padding: 0;
+}
+
 header {
     padding: 0 3.125rem;
     height: 66px;
@@ -66,7 +70,10 @@ nav .seperator {
     background-color: #8A8A8A;
 }
 
-header a {
+header button {
+    cursor: pointer;
+    border: unset;
+    background-color: unset;
     padding: 0 3px;
     font-size: 1.187rem;
     display: flex;
@@ -77,15 +84,16 @@ header a {
     height: 66px;
 }
 
-header a:last-child {
+header button:last-child {
     padding: 0;
 }
 
-header a:hover {
+header button:hover {
     color: #040A2C;
 }
 
-header a.curr-page {
+header button.curr-page {
+    cursor: default;
     color: #040A2C;
     -webkit-box-shadow: inset 0px -5px 0px 0px #000000;
     box-shadow: inset 0px -5px 0px 0px #000000;
@@ -105,9 +113,78 @@ header a.curr-page {
     justify-content: space-between;
 }
 
-.filter input.search {
+.search {
+    border-bottom: #040A2C solid 3px;
+}
+
+.search:hover,
+.search:hover:focus-visible {
+    border-bottom: #FF7F00 solid 3px;
+}
+
+.filter-container input {
+    border: unset;
     height: 27px;
     width: 262px;
+}
+
+.filter-container input:focus-visible {
+    outline: unset;
+}
+
+.filter .search img {
+    position: relative;
+    top: 5px;
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+}
+
+.categories-out-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.875rem
+}
+
+.categories-out-container button {
+    border: unset;
+    background-color: unset;
+    line-height: 1;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #040A2C;
+}
+
+.categories {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.875rem
+}
+
+.categories-out-container button:hover {
+    color: #FF7F00;
+}
+
+.categories button.very-few {
+    font-size: 1.187rem;
+}
+
+.categories button.few {
+    font-size: 1.5rem;
+}
+
+.categories button.avg {
+    font-size: 1.875rem;
+}
+
+.categories button.much {
+    font-size: 2.5rem;
+}
+
+.categories button.very-much {
+    font-size: 3rem
 }
 
 main {
@@ -204,6 +281,18 @@ section.about .details {
 
 .git::before {
     content: '\f09b';
+}
+
+.facebook:hover {
+    background-color: #3b5998;
+}
+
+.linkdin:hover {
+    background-color: #2174c8;
+}
+
+.git:hover {
+    background-color: #161b22;
 }
 
 footer {
