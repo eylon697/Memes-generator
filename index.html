@@ -12,29 +12,60 @@
 
 <body>
     <header>
-        <h1 class="logo">MEMES</h1>
-        <nav>
-            <button class="btn-gallery">Gallery</button>
-            <button class="btn-about">About</button>
-        </nav>
+        <div class="header-container main-layout">
+            <img class="logo" src="logos/logo.png" alt="">
+            <nav>
+                <a href="" class="link-gallery curr-page">Gallery</a>
+                <div class="seperator"></div>
+                <a href="" class="link-about">About</a>
+            </nav>
+        </div>
     </header>
-    <section class="generator">
-
+    <section class="filter">
+        <div class="filter-container main-layout">
+            <input class="search" type="text">
+            <div class="categories">categories categories categories categories categories</div>
+        </div>
     </section>
     <main>
-        <div class="search-and-filter">
-            <input class="search" type="text">
-            <div class="categories"></div>
-        </div>
-        <div class="gallery">
-            <img src="img/square/1.jpg" alt="img1">
-            <img src="img/square/2.jpg" alt="img2">
+        <div class="main-container main-layout">
+            <div class="gallery">
+                <img src="img/1.jpg" alt="img1">
+                <img src="img/2.jpg" alt="img2">
+            </div>
         </div>
     </main>
-    <script src="js/galery-controller.js"></script>
-    <script src="js/editor-controller.js"></script>
+    <section class="about">
+        <div class="about-container">
+            <img src="img/alina.jpg" alt="Monica Geller">
+            <div class="details">
+                <div class="empty"></div>
+                <div class="about-txt">
+                    <h2>
+                        Monica Geller
+                    </h2>
+                    <p>
+                        is a fictional character, one of the six main characters who appears on the American sitcom Friends
+                    </p>
+                </div>
+                <div class="social">
+                    <a class="linkdin" href="https://www.linkedin.com/"></a>
+                    <a class="facebook" href="https://www.facebook.com/mda.jerusalem"></a>
+                    <a class="git" href="https://github.com/eylon697"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <img class="logo" src="logos/logo.png" alt="">
+        <small class="copyrights">all rights reserved 2019</small>
+    </footer>
+    <script src="js/controller.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/storage-service.js"></script>
+    <section class="generator" hidden>
+        <canvas height="100px" weidth="100px">Update your browser!</canvas>
+    </section>
 </body>
 
 </html>
