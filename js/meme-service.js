@@ -20,35 +20,34 @@ var gKeywords = [{
     },
     {
         name: 'funny',
-        value: 4
+        value: 15
     },
     {
-        name: 'books',
+        name: 'pets',
         value: 0
     },
-
 ]
 
 
 var gImgs = [{
         id: 1,
         url: 'img/1.jpg',
-        keywords: ['happy']
+        keywords: ['funny']
     },
     {
         id: 2,
         url: 'img/2.jpg',
-        keywords: ['dogs']
+        keywords: ['pets']
     },
     {
         id: 3,
         url: 'img/3.jpg',
-        keywords: ['funney']
+        keywords: ['happy']
     },
     {
         id: 4,
         url: 'img/4.jpg',
-        keywords: ['funny']
+        keywords: ['pets', 'funny']
     },
     {
         id: 5,
@@ -58,7 +57,7 @@ var gImgs = [{
     {
         id: 6,
         url: 'img/6.jpg',
-        keywords: ['funny']
+        keywords: ['funny', 'happy']
     },
     {
         id: 7,
@@ -68,7 +67,7 @@ var gImgs = [{
     {
         id: 8,
         url: 'img/8.jpg',
-        keywords: ['funny']
+        keywords: ['happy']
     },
     {
         id: 9,
@@ -327,7 +326,7 @@ function getFirstEqualLineIdx(line) {
     })
 }
 
-function updateFilterBy(filterBy) {
+function setFilterBy(filterBy) {
     gFilterBy = filterBy
 }
 
@@ -336,6 +335,13 @@ function updateFilter(inputFilter) {
 }
 
 function getImgs() {
+    var imgs
+    if (gFilterBy) imgs = gImgs.filter(img => {
+        return img.keywords.includes(gFilterBy)
+    })
+    else imgs = gImgs
     var regex = new RegExp(gInputFilter, 'i')
-    return gImgs.filter(img => regex.test(img.keywords[0]))
+    return imgs.filter(img => {
+        return img.keywords.find(keyWord => regex.test(keyWord))
+    })
 }

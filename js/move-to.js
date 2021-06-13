@@ -52,7 +52,7 @@ function onDown(ev) {
 
 function onMove(ev) {
     const line = getLine();
-    if (line.isDrag) {
+    if (gMeme.lines.length && line.isDrag) {
         console.log(gCurrLine.isDrag);
         console.log(gCurrLine);
         const pos = getEvPos(ev)

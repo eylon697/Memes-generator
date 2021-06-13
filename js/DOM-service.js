@@ -1,6 +1,5 @@
 'use strict'
 
-
 function renderImgs() {
     var strsHTML = []
     getImgs().forEach(img => strsHTML.push(`<img src="${img.url}" alt"${img.url}" onclick="onImageClick(${img.id})">`))
@@ -13,6 +12,7 @@ function displayGenerator() {
     display('.filter', 'none')
     display('.gallery', 'none')
     display('.generator', 'flex')
+    toggleCurrPage(1)
 }
 
 function displayGallery() {
@@ -20,6 +20,11 @@ function displayGallery() {
     display('.filter', 'flex')
     display('.gallery', 'grid')
     display('.generator', 'none')
+    toggleCurrPage(1)
+}
+
+function toggleCurrPage(selector) {
+    document.getElementById(1).classList.toggle('curr-page')
 }
 
 function renderCanvas() {
@@ -28,8 +33,8 @@ function renderCanvas() {
     img.src = getImageUrl();
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-        renderStickers()
         renderLines()
+        renderStickers()
     }
     renderInputsValues()
     gCtx.restore()

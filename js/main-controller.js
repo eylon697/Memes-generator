@@ -27,12 +27,12 @@ function onInputFilter(inputFilter) {
 }
 
 function onSetFilterBy(filterBy) {
-    updateFilterBy(filterBy)
+    setFilterBy(filterBy)
     renderImgs()
 }
 
 function onAboutClick() {
-    displayFlex('.about')
+    display('.about', 'flex')
     window.scrollTo(0, document.body.scrollHeight);
 }
 

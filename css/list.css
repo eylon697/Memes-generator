@@ -13,18 +13,18 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    border-radius: 7px;
+    /* border-radius: 7px; */
     font-size: 23px;
 }
 
 li {
     font-weight: 900;
-    border-radius: 6px;
+    /* border-radius: 6px; */
     background-color: #fff;
 }
 
 li ul li {
-    border-radius: 0px;
+    /* border-radius: 0px; */
     background-color: #fff;
 }
 
@@ -46,7 +46,7 @@ ul.nav li a {
 ul.nav li a:hover {
     color: #FFFFFF;
     background-color: #FF7F00;
-    border: #FFFFFF solid 1px;
+    outline: #FFFFFF solid 1px;
 }
 
 ul.nav li ul li {
@@ -62,36 +62,11 @@ ul.nav li:hover ul {
     display: block;
 }
 
-.opt1 {
-    border-top-right-radius: 6px;
-    border-bottom: solid rgb(236, 189, 102) 2px;
-}
-
-.opt2 {
-    border-bottom: solid rgb(236, 189, 102) 2px;
-}
-
-.opt3 {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
-.opt3:hover {
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-}
-
 .title-list {
-    /* border-radius: 20px; */
     font-family: Montserrat-Bold;
     font-size: 1.5rem;
     line-height: 2;
     color: #FF7F00;
-}
-
-.title-list:hover {
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
 }
 
 li a {
@@ -120,5 +95,5 @@ a div.second {
 }
 
 ul li ul li:first-child {
-    border-top: solid rgb(236, 189, 102) 2px;
+    /* border-top: solid rgb(236, 189, 102) 2px; */
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>memegen</title>
+    <link rel="icon" href="icons/clipart964358.png">
     <link rel="stylesheet" href="css/list.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/generator.css">
@@ -20,7 +21,7 @@
             <nav>
 
                 <!-- <button class="btn-menu" onclick="toggleMenu()">☰</button> -->
-                <button class="btn-gallery curr-page" onclick="onGalleryClick()">Gallery</button>
+                <button id="1" class="btn-gallery curr-page" onclick="onGalleryClick()">Gallery</button>
                 <div class="seperator"></div>
                 <!-- <button class="btn-memes">Memes</button>
                 <div class="seperator"></div> -->
@@ -37,14 +38,8 @@
                 <img src="icons/search-icon.png">
             </div>
             <div class="categories-out-container">
-                <div class="categories">
-                    <button class="very-few">funny</button>
-                    <button class="much">comics</button>
-                    <button class="few">dogs</button>
-                    <button class="avg">drinks</button>
-                    <button class="very-much">books</button>
-                </div>
-                <button class="more">more...</button>
+                <div class="categories"></div>
+
             </div>
         </div>
     </section>
@@ -53,7 +48,7 @@
         <div class="main-container ">
             <section class="generator main-layout">
                 <div class="canvas-container" onmouseout="document.body.style.cursor = 'auto'">
-                    <canvas class="">Update your browser!</canvas>
+                    <canvas>Update your browser!</canvas>
                 </div>
                 <div class="tool-bar">
                     <div class="top">
@@ -125,20 +120,20 @@
 
     <section class="about">
         <div class="about-container">
-            <img src="img/alina.jpg" alt="Monica Geller">
+            <img src="img/eylon.jpg" alt="Monica Geller">
             <div class="details">
                 <div class="empty"></div>
                 <div class="about-txt">
                     <h2>
-                        Monica Geller
+                        Eylon Toren
                     </h2>
                     <p>
-                        is a fictional character, one of the six main characters who appears on the American sitcom Friends
+                        Just a simple person who loves to smile
                     </p>
                 </div>
                 <div class="social">
                     <a class="linkdin" href="https://www.linkedin.com/"></a>
-                    <a class="facebook" href="https://www.facebook.com/mda.jerusalem"></a>
+                    <a class="facebook" href="https://www.facebook.com/profile.php?id=100037731381513"></a>
                     <a class="git" href="https://github.com/eylon697"></a>
                 </div>
             </div>
@@ -148,12 +143,12 @@
         <img class="logo" src="logos/logo.png" alt="">
         <small class="copyrights">all rights reserved 2019</small>
     </footer>
-    <script src="js/move.js"></script>
-    <script src="js/renders.js"></script>
+    <script src="js/move-to.js"></script>
+    <script src="js/DOM-service.js"></script>
     <script src="js/upload-service.js"></script>
     <script src="js/storage-service.js"></script>
     <script src="js/meme-service.js"></script>
-    <script src="js/controller.js"></script>
+    <script src="js/main-controller.js"></script>
     <script src="js/generator-controller.js"></script>
 </body>
 

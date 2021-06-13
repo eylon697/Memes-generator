@@ -9,6 +9,7 @@
 }
 
 .canvas-container {
+    height: 330px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,6 +38,11 @@
     justify-content: space-between;
     gap: 0.125rem;
     row-gap: 0.562rem;
+}
+
+.stroke,
+.fill {
+    cursor: pointer;
 }
 
 .tool-bar button,
@@ -76,7 +82,8 @@ outline-color: #FF7F00;
     border-radius: 15px;
 }
 
-.tool-bar button:focus-visible,
+
+/* .tool-bar button:focus-visible,
 .tool-bar input:focus-visible,
 .tool-bar select:focus-visible,
 .tool-bar input:hover,
@@ -84,7 +91,7 @@ outline-color: #FF7F00;
 .tool-bar select:hover {
     outline: unset;
     background-color: #FF7F00;
-}
+} */
 
 .tool-bar button:hover,
 .tool-bar select:hover {
@@ -116,13 +123,16 @@ outline-color: #FF7F00;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 139px;
-    margin-bottom: 1.187rem;
+    height: 125px;
+    margin-bottom: 1rem;
     border-radius: 15px;
     background-color: #FFFFFF;
 }
 
 .tool-bar .stickers {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
     margin: 0;
     display: flex;
     align-items: center;
@@ -130,7 +140,6 @@ outline-color: #FF7F00;
 }
 
 .sticker {
-    width: 100%;
     object-fit: contain;
     width: 70px;
     height: 70px;
@@ -209,8 +218,18 @@ button.btn:hover {
 }
 
 a.btn {
-    padding-top: 1000px;
+    border-radius: 0;
+    /* padding-top: 1000px; */
     text-align: center;
+}
+
+button.btn {
+    padding: 0;
+    border-radius: 0;
+}
+
+button.btn:hover {
+    padding: 0;
 }
 
 @media (min-width: 360px) {
@@ -223,11 +242,15 @@ a.btn {
     .mid {
         gap: 0.8rem;
     }
+    .canvas-container {
+        height: 330px;
+    }
 }
 
 @media (min-width: 750px) {
     .canvas-container {
         height: 500px;
+        /* width: 500px; */
     }
 }
 
