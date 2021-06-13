@@ -3,56 +3,32 @@
 
 function init() {
     renderImgs()
+    renderCategories()
 }
 
 function onImageClick(imgId) {
     resetMeme()
+    updateCurrLine()
+        // updateSelctedItem('line', 0)
     resetCanvas()
-    displayNone('main')
-    displayNone('.filter')
-    displayBlock('.generator')
-    setMemeImg(imgId)
+    displayGenerator()
+    setSelectedImgId(imgId)
     renderCanvas()
-    drawText()
+    renderStickersStuck()
+    resizeCanvas()
+    addListeners()
 }
 
-function resetCanvas() {
-    gCanvas = document.querySelector('canvas')
-    gCtx = gCanvas.getContext('2d')
+function toggleMenu() {
+    document.body.classList.toggle('menu-open');
 }
 
-function displayNone(elSelector) {
-    document.querySelector(elSelector).style.display = 'none'
+function onInputFilter(inputFilter) {
+    updateFilter(inputFilter)
+    renderImgs()
 }
 
-function displayBlock(elSelector) {
-    document.querySelector(elSelector).style.display = 'block'
-}
-
-function renderCanvas() {
-    setCanvasImg()
-}
-
-function setCanvasImg() {
-    var img = new Image()
-    img.src = getImageUrl();
-    img.onload = () => {
-        gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-    }
-}
-
-function drawText() {
-    gCtx.font = "30px Arial";
-    gCtx.fillText("Hello World", 10, 50);
-}
-
-function renderCategories() {
-
-}
-
-function renderImgs() {
-    var strsHTML = []
-    gImgs.forEach(img => strsHTML.push(`<img src="${img.url}" alt"${img.url}" onclick="onImageClick(${img.id})">`))
-    if (!strsHTML.length) return
-    document.querySelector('.gallery').innerHTML = strsHTML.join('')
+function onSetFilterBy(filterBy) {
+    updateFilterBy(filterBy)
+    renderImgs()
 }

@@ -5,32 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>memegen</title>
+    <link rel="stylesheet" href="css/list.css">
     <link rel="stylesheet" href="css/gallery.css">
     <link rel="stylesheet" href="css/generator.css">
 </head>
 
 <body onload="init()">
+    <div class="main-screen" onclick="toggleMenu()"></div>
 
     <header>
         <div class="header-container main-layout">
             <img class="logo" src="logos/logo.png" alt="">
             <nav>
+
+                <!-- <button class="btn-menu" onclick="toggleMenu()">☰</button> -->
                 <button class="btn-gallery curr-page">Gallery</button>
                 <div class="seperator"></div>
-                <button class="btn-about">About</button>
+                <button class="btn-memes">Memes</button>
+                <div class="seperator"></div>
+                <button class="btn-about" onclick="window.scrollTo(0,document.body.scrollHeight);">About</button>
             </nav>
         </div>
     </header>
 
-    <section class="generator">
-        <canvas height="100px" weidth="100px">Update your browser!</canvas>
-    </section>
 
     <section class="filter">
         <div class="filter-container main-layout">
             <div class="search">
-                <input type="text" placeholder="Enter search keyword">
+                <input type="text" placeholder="Enter search keyword" oninput="onInputFilter(this.value)">
                 <img src="icons/search-icon.png">
             </div>
             <div class="categories-out-container">
@@ -38,8 +41,8 @@
                     <button class="very-few">funny</button>
                     <button class="much">comics</button>
                     <button class="few">dogs</button>
-                    <!-- <button class="avg">drinks</button>
-                    <button class="very-much">books</button> -->
+                    <button class="avg">drinks</button>
+                    <button class="very-much">books</button>
                 </div>
                 <button class="more">more...</button>
             </div>
@@ -47,7 +50,75 @@
     </section>
 
     <main>
-        <div class="main-container main-layout">
+        <div class="main-container ">
+            <section class="generator main-layout">
+                <div class="canvas-container" onmouseout="document.body.style.cursor = 'auto'">
+                    <canvas class="">Update your browser!</canvas>
+                </div>
+                <div class="tool-bar">
+                    <div class="top">
+                        <input class="txt" type="text" oninput="onTxtInput(this.value)" placeholder="Enter your text here">
+                        <button onclick="onSwitchLineClick()"><img src="icons/switch-ilne.png"></button>
+                        <button onclick="onAddLineClick()"><img src="icons/add.png"></button>
+                        <button onclick="onDeleteLineClick()"><img src="icons/trash.png"></button>
+                    </div>
+                    <div class="mid">
+                        <button onclick="onIncreaseFontClick()"><img src="icons/increase-font.png"></button>
+                        <button onclick="onDecreaseFontClick()"><img src="icons/decrease-font.png"></button>
+                        <button onclick="onAlignClick('right')"><img src="icons/align-left.png"></button>
+                        <button onclick="onAlignClick('center')"><img src="icons/align-center.png"></button>
+                        <button onclick="onAlignClick('left')"><img src="icons/align-right.png"></button>
+                        <select class="fonts" onchange="onFontChange(this.value)">
+                            <option value="impact">Impact</option>
+                            <option value="cursive">cursive</option>
+                            <option value="fantasy">fantasy</option>
+                            <option value="monospace">monospace</option>
+                            <option value="sans">sans</option>
+                            <option value="serif">serif</option>
+                        </select>
+                        <button class="color"><input class="stroke" type="color"
+                                oninput="onStrokeChange(this.value)"><img src="icons/text-stroke.png"></input></button>
+                        <button class="color"><input class="fill" type="color" oninput="onFillChange(this.value)"><img
+                                src="icons/paint-board-and-brush.png"></input></button>
+                    </div>
+                    <div class="bottom">
+                        <button class="arrow-left" onclick="onScrollStickers(-1)"><img
+                                src="icons/Rectangle 9 copy@1X.png"></button>
+                        <div class="stickers"></div>
+                        <button class="arrow-right" onclick="onScrollStickers(1)"><img
+                                src="icons/Rectangle 9 copy 2@1X.png"></button>
+                    </div>
+                    <div class="list">
+                        <ul class="nav">
+                            <li onmouseover="onShareHover()" onmouseout="onShareOut()">
+                                <form action="" method="POST" enctype="multipart/form-data" onsubmit="uploadImg(this, event)">
+                                    <a class="title-list">
+                                        <input name="img" id="imgData" type="hidden" />
+                                        <button class="btn" type="submit">Share</button>
+                                    </a>
+                                </form>
+                                <ul>
+                                    <li class="opt1">
+
+                                        <div class="first share-container"></div>
+
+                                    </li>
+                                    <li class="opt2">
+                                        <a onclick="onSaveClick()">
+                                            <div class="second">Save
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="opt3">
+                                        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <button class="share" onclick="onShareClick()">Share</button> -->
+                </div>
+            </section>
             <div class="gallery"></div>
         </div>
     </main>
@@ -77,9 +148,13 @@
         <img class="logo" src="logos/logo.png" alt="">
         <small class="copyrights">all rights reserved 2019</small>
     </footer>
-    <script src="js/controller.js"></script>
-    <script src="js/meme-service.js"></script>
+    <script src="js/move.js"></script>
+    <script src="js/renders.js"></script>
+    <script src="js/upload-service.js"></script>
     <script src="js/storage-service.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/generator-controller.js"></script>
 </body>
 
 </html>

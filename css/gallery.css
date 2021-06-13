@@ -99,10 +99,6 @@ header button.curr-page {
     box-shadow: inset 0px -5px 0px 0px #000000;
 }
 
-.generator {
-    display: none;
-}
-
 .filter {
     padding: 0 48px;
     height: 100px;
@@ -174,6 +170,10 @@ header button.curr-page {
     color: #FF7F00;
 }
 
+button {
+    cursor: pointer;
+}
+
 .categories button.very-few {
     font-size: 1.187rem;
 }
@@ -196,19 +196,20 @@ header button.curr-page {
 
 main {
     background-color: #E3E3E3;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .main-container {
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .gallery {
-    display: flex;
-    align-self: center;
+    /* display: flex;
+    align-self: center; */
     display: grid;
     max-width: 400px;
     grid-template-columns: repeat(auto-fit, 10rem);
@@ -218,6 +219,7 @@ main {
 }
 
 .gallery img {
+    cursor: pointer;
     border-radius: 0.5em;
     height: 10rem;
     width: 10rem;
@@ -240,7 +242,8 @@ main {
 } */
 
 canvas {
-    border: black solid 1px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
 }
 
 section.about {
@@ -339,6 +342,7 @@ section.about {
 }
 
 footer {
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -463,20 +467,5 @@ footer {
     }
     .social {
         justify-content: start;
-    }
-}
-
-@media (min-width: 1250px) {
-    .main-layout {
-        max-width: 1100px;
-    }
-    .gallery {
-        max-width: 1135px;
-        grid-template-columns: repeat(auto-fit, 16.98rem);
-        grid-auto-rows: 16.98rem;
-    }
-    .gallery img {
-        height: 16.98rem;
-        width: 16.98rem;
     }
 }
