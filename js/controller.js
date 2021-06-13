@@ -32,3 +32,12 @@ function onSetFilterBy(filterBy) {
     updateFilterBy(filterBy)
     renderImgs()
 }
+
+function onAboutClick() {
+    displayFlex('.about')
+    window.scrollTo(0, document.body.scrollHeight);
+}
+
+function onGalleryClick() {
+    displayGallery()
+}

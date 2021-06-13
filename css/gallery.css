@@ -93,7 +93,7 @@ header button:hover {
 }
 
 header button.curr-page {
-    cursor: default;
+    /* cursor: default; */
     color: #040A2C;
     -webkit-box-shadow: inset 0px -5px 0px 0px #000000;
     box-shadow: inset 0px -5px 0px 0px #000000;
@@ -225,6 +225,10 @@ main {
     width: 10rem;
 }
 
+.gallery img:hover {
+    background-color: rgba(0, 0, 0, 0.651);
+}
+
 
 /* .portrait {
     grid-row: span 2;
@@ -348,7 +352,7 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding: 4.875rem 0;
+    padding: 8rem 0;
     background-color: #FF7F00;
 }
 

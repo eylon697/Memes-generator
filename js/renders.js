@@ -15,6 +15,13 @@ function displayGenerator() {
     displayFlex('.generator')
 }
 
+function displayGallery() {
+    displayFlex('.about')
+    displayFlex('.filter')
+    displayGrid('.gallery')
+    displayNone('.generator')
+}
+
 function renderCanvas() {
     gCtx.save()
     var img = new Image()
@@ -65,6 +72,10 @@ function displayBlock(elSelector) {
 
 function displayFlex(elSelector) {
     document.querySelector(elSelector).style.display = 'flex'
+}
+
+function displayGrid(elSelector) {
+    document.querySelector(elSelector).style.display = 'grid'
 }
 
 function renderCategories() {

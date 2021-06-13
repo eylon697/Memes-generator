@@ -20,11 +20,11 @@
             <nav>
 
                 <!-- <button class="btn-menu" onclick="toggleMenu()">☰</button> -->
-                <button class="btn-gallery curr-page">Gallery</button>
+                <button class="btn-gallery curr-page" onclick="onGalleryClick()">Gallery</button>
                 <div class="seperator"></div>
-                <button class="btn-memes">Memes</button>
-                <div class="seperator"></div>
-                <button class="btn-about" onclick="window.scrollTo(0,document.body.scrollHeight);">About</button>
+                <!-- <button class="btn-memes">Memes</button>
+                <div class="seperator"></div> -->
+                <button class="btn-about" onclick="onAboutClick()">About</button>
             </nav>
         </div>
     </header>
@@ -103,12 +103,12 @@
                                         <div class="first share-container"></div>
 
                                     </li>
-                                    <li class="opt2">
+                                    <!-- <li class="opt2">
                                         <a onclick="onSaveClick()">
                                             <div class="second">Save
                                             </div>
                                         </a>
-                                    </li>
+                                    </li> -->
                                     <li class="opt3">
                                         <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
                                     </li>
