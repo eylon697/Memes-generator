@@ -188,7 +188,7 @@ function resetMeme() {
         // selectedItem: null,
         lines: [{
             txt: 'Enter your txt',
-            x: elContainer.width * 0.92,
+            x: 260,
             y: 80,
             fontSize: 40,
             lineWidth: 2,
@@ -221,9 +221,9 @@ function addLine() {
     var yCoord = getDynamicYCoord()
     gMeme.lines.push({
         txt: 'Enter your txt',
-        x: 275,
+        x: 260,
         y: yCoord,
-        fontSize: 50,
+        fontSize: 40,
         lineWidth: 2,
         txtWidth: null,
         fontFamily: 'impact',
@@ -258,9 +258,7 @@ function getDynamicYCoord() {
         case 0:
             return 80
         case 1:
-            return 500
-        case 2:
-            return 275
+            return 450
     }
     return 275
 }
